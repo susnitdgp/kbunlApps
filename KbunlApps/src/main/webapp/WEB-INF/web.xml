@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+ 
+ <!-- Objectify Helper START -->
+ 
+	<filter>
+	  <filter-name>ObjectifyFilter</filter-name>
+	  <filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	  <filter-name>ObjectifyFilter</filter-name>
+	  <url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<listener>
+	  <listener-class>com.kbunl.setup.OfyHelper</listener-class>
+	</listener>
+  <!-- Objectify Helper END --> 
+  
+  <!-- Session Clean Up START-->
+   <servlet>
+    <servlet-name>_ah_sessioncleanup</servlet-name>
+    <servlet-class>com.google.apphosting.utils.servlet.SessionCleanupServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>_ah_sessioncleanup</servlet-name>
+    <url-pattern>/_ah/sessioncleanup</url-pattern>
+  </servlet-mapping>
+  <!-- Session Clean Up END-->
+  
+ <!-- Hello Servlet  --> 
+         
+  <servlet>
+    <servlet-name>HelloAppEngine</servlet-name>
+    <servlet-class>com.kbunl.HelloAppEngine</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloAppEngine</servlet-name>
+    <url-pattern>/Hello</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>UpdateDaily</servlet-name>
+    <servlet-class>com.kbunl.UpdateDaily</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateDaily</servlet-name>
+    <url-pattern>/Chemistry/UpdateDaily</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Chemistry Servlet -->
+  
+  <servlet>
+    <servlet-name>DmWaterStatusServlet</servlet-name>
+    <servlet-class>com.kbunl.chemistry.servlet.DmWaterStatusServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DmWaterStatusServlet</servlet-name>
+    <url-pattern>/Chemistry/DmWaterStatus</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>HydrogenPurityStatusServlet</servlet-name>
+    <servlet-class>com.kbunl.chemistry.servlet.HydrogenPurityStatusServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HydrogenPurityStatusServlet</servlet-name>
+    <url-pattern>/Chemistry/HyrogenPurityStatus</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>DmWaterDataSourceServlet</servlet-name>
+    <servlet-class>com.kbunl.chemistry.servlet.DmWaterDataSourceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DmWaterDataSourceServlet</servlet-name>
+    <url-pattern>/Chemistry/DmWaterDataSource</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>HydrogenDataSourceServlet</servlet-name>
+    <servlet-class>com.kbunl.chemistry.servlet.HydrogenDataSourceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HydrogenDataSourceServlet</servlet-name>
+    <url-pattern>/Chemistry/HydrogenDataSource</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- Form Servlet -->
+  
+  <servlet>
+    <servlet-name>DmWaterProdConsumptionServlet</servlet-name>
+    <servlet-class>com.kbunl.chemistry.servlet.DmWaterProdConsumptionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DmWaterProdConsumptionServlet</servlet-name>
+    <url-pattern>/Chemistry/DmWaterProdConsumption</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>HydrogenPurityServlet</servlet-name>
+    <servlet-class>com.kbunl.chemistry.servlet.HydrogenPurityServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HydrogenPurityServlet</servlet-name>
+    <url-pattern>/Chemistry/HydrogenPurity</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SteamWaterAnalysisServlet</servlet-name>
+    <servlet-class>com.kbunl.chemistry.servlet.SteamWaterAnalysisServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SteamWaterAnalysisServlet</servlet-name>
+    <url-pattern>/Chemistry/SteamWaterAnalysis</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Upload Daily Chemistry Report -->
+   <servlet>
+    <servlet-name>UploadDailyReportServlet</servlet-name>
+    <servlet-class>com.kbunl.chemistry.servlet.UploadDailyReportServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadDailyReportServlet</servlet-name>
+    <url-pattern>/Chemistry/UploadDailyReport</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Process Daily Chemistry Report -->
+   <servlet>
+    <servlet-name>ProcessDailyReportServlet</servlet-name>
+    <servlet-class>com.kbunl.chemistry.servlet.ProcessDailyReportServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProcessDailyReportServlet</servlet-name>
+    <url-pattern>/Chemistry/ProcessDailyReport</url-pattern>
+  </servlet-mapping>
+  <!-- Download Daily Chemistry Report -->
+  <servlet>
+    <servlet-name>DailyReportDownloadServlet</servlet-name>
+    <servlet-class>com.kbunl.chemistry.servlet.DailyReportDownloadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DailyReportDownloadServlet</servlet-name>
+    <url-pattern>/Chemistry/DailyReportDownload</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>ChemSubmitSuccessServlet</servlet-name>
+    <servlet-class>com.kbunl.chemistry.servlet.ChemSubmitSuccessServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChemSubmitSuccessServlet</servlet-name>
+    <url-pattern>/Chemistry/ChemSubmitSuccess</url-pattern>
+  </servlet-mapping>
+  
+   <!-- Test Servlet  --> 
+   <servlet>
+    <servlet-name>TestServlet</servlet-name>
+    <servlet-class>com.kbunl.TestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestServlet</servlet-name>
+    <url-pattern>/Test</url-pattern>
+  </servlet-mapping>
+  
+   <!-- Json Test Servlet  --> 
+  <servlet>
+    <servlet-name>JsonServlet</servlet-name>
+    <servlet-class>com.kbunl.JsonServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JsonServlet</servlet-name>
+    <url-pattern>/Json</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+ 
+ 
+  
+  
+  <!-- Securing CRON URL to ADMIN role only -->
+  <security-constraint>
+  	<web-resource-collection>
+        <web-resource-name>sessioncleanup</web-resource-name>
+        <url-pattern>/_ah/sessioncleanup</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+        <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+  
+
+  
+</web-app>

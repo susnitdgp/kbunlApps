@@ -49,13 +49,13 @@
       			
       			    <form class="form-inline">
   						<div class="control-group">
-      			    		<label class="control-label" for="fromDate"><strong>FromDate:</strong></label>
+      			    		<label class="control-label" for="fromDate"><strong>From Date:</strong></label>
       			    		<div class="controls">
       							<input type="text"  name="fromDate" id="fromDate"/>
       						</div>
       					</div>
       					<div class="control-group">
-      			    		<label class="control-label" for="toDate"><strong>ToDate:</strong></label>
+      			    		<label class="control-label" for="toDate"><strong>To Date:</strong></label>
       			    		<div class="controls">
       							<input type="text" name="toDate" id="toDate" />
       						</div>

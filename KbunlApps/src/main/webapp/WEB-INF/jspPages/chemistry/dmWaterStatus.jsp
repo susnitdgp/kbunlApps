@@ -48,13 +48,17 @@
       			<br/>
       			
       			    <form class="form-inline">
-      			    	<div class="input-prepend">
-      			    		<span class="add-on"><strong>From Date:</strong></span>
-      						<input type="text"  name="fromDate" id="fromDate"/>
+  						<div class="control-group">
+      			    		<label class="control-label" for="fromDate"><strong>FromDate:</strong></label>
+      			    		<div class="controls">
+      							<input type="text"  name="fromDate" id="fromDate"/>
+      						</div>
       					</div>
-      					<div class="input-prepend">
-      			    		<span class="add-on"><strong>To Date:</strong></span>
-      						<input type="text" name="toDate" id="toDate" />
+      					<div class="control-group">
+      			    		<label class="control-label" for="toDate"><strong>ToDate:</strong></label>
+      			    		<div class="controls">
+      							<input type="text" name="toDate" id="toDate" />
+      						</div>
       					</div>
       					
       					<button class="btn btn-primary" type="button" id="showButton"><i class="icon-arrow-right icon-white "></i> Show Trend</button>
